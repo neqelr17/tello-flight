@@ -1,0 +1,14 @@
+[
+    {
+        "command": "speed 100",
+        "result": "OK"
+    },
+    {
+        "command": "cw 360",
+        "result": "OK"
+    },
+    {
+        "command": "ccw 360",
+        "result": "OK"
+    }
+]

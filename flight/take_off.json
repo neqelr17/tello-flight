@@ -1,0 +1,14 @@
+[
+    {
+        "command": "command",
+        "result": "OK"
+    },
+    {
+        "command": "takeoff",
+        "result": "OK"
+    },
+    {
+        "command": "wait",
+        "seconds": 5
+    }
+]

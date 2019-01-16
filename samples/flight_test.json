@@ -1,0 +1,38 @@
+[
+    {
+        "command": "speed 100",
+        "result": "OK"
+    },
+    {
+        "command": "forward 40",
+        "result": "OK"
+    },
+    {
+        "command": "back 40",
+        "result": "OK"
+    },
+    {
+        "command": "right 30",
+        "result": "OK"
+    },
+    {
+        "command": "left 30",
+        "result": "OK"
+    },
+    {
+        "command": "up 50",
+        "result": "OK"
+    },
+    {
+        "command": "down 30",
+        "result": "OK"
+    },
+    {
+        "command": "cw 20",
+        "result": "OK"
+    },
+    {
+        "command": "ccw 40",
+        "result": "OK"
+    }
+]
