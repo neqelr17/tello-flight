@@ -1,0 +1,30 @@
+[
+    {
+        "command": "speed 100",
+        "result": "OK"
+    },
+    {
+        "command": "forward 100",
+        "result": "OK"
+    },
+    {
+        "command": "flip f",
+        "result": "OK"
+    },
+    {
+        "command": "wait",
+        "seconds": 2
+    },
+    {
+        "command": "back 100",
+        "result": "OK"
+    },
+    {
+        "command": "flip b",
+        "result": "OK"
+    },
+    {
+        "command": "wait",
+        "seconds": 2
+    }
+]

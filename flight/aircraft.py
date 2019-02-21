@@ -30,6 +30,9 @@ class Aircraft():
         self.sock.bind(self.localaddr)
         self.plan = []
 
+        # Other aircraft attributes.
+        self.is_airborne = False
+
     def import_flight_plan(self, plan):
         """Import JSON flight plan."""
         try:
@@ -63,13 +66,37 @@ class Aircraft():
         except Exception:
             self.sock.close()
 
+    def take_off(self):
+        """Take off aircraft."""
+        if not self.is_airborne:
+            self.fly('take_off.json')
+            self.fly('flight_test.json')
+            self.is_airborne = True
+
+    def land(self):
+        """Land aircraft."""
+        if self.is_airborne:
+            self.fly('flight_test.json')
+            self.fly('land.json')
+            self.is_airborne = False
+
+    @property
+    def battery(self):
+        """Get battery percent."""
+        sent = self.sock.sendto('battery?'.encode(ENCODING),
+                                            self.tello_address)
+        data, server = self.sock.recvfrom(self.buffer_size)
+        data = data.decode(encoding=ENCODING)
+        return data.rstrip()
+
 
 if __name__ == "__main__":
     aircraft = Aircraft()
-    aircraft.fly('take_off.json')
-    aircraft.fly('flight_test2.json')
-    aircraft.fly('flight_test3.json')
-    # aircraft.fly('square2.json')
-    # aircraft.fly('triangle.json')
-    aircraft.fly('land.json')
+    # aircraft.fly('take_off.json')
+    # aircraft.fly('../samples/flight_test2.json')
+    # aircraft.fly('../samples/flight_test3.json')
+    # aircraft.fly('../samples/square2.json')
+    # aircraft.fly('../samples/triangle.json')
+    aircraft.fly('../samples/flip.json')
+    # aircraft.fly('land.json')
     aircraft.sock.close()
